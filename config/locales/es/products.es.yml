@@ -1,0 +1,20 @@
+es:
+  products:
+    add_product: 'Añadir Producto'
+    filter_by_rating: 'Filtrar por Valoración'
+    all_ratings: 'Todas las valoraciones'
+    rating_page: 'Página de Valoraciones'
+    index_page: 'Mantenimiento de Productos'
+    header:
+      product: 'Producto'
+      price: 'Precio'
+      rating: 'Valoración'
+    name:
+      label: 'Nombre'
+      placeholder: 'Introduzca un nombre para el producto'
+    price:
+      label: 'Precio'
+      placeholder: 'Introduzca un precio para el producto'
+    rating:
+      label: 'Valoración'
+      placeholder: 'Introduzca una valoración para el producto'

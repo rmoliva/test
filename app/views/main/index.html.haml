@@ -1,0 +1,58 @@
+- content_for :js_links do
+  = javascript_include_tag('application')
+  :javascript
+    $(document).ready(function() {
+      var page = ProductsPage({
+        add_product_el: '#add_product_btn',
+        products_table_el: '#products_table',
+        product_modal: '#product_modal',
+        product_records_info: '#product_records_info',
+        product_form: {
+          name_el: '#product_name',
+          price_el: '#product_price',
+          rating_el: '#product_rating',
+        },
+        product_page_prev: '#product_page_prev',
+        product_page_next: '#product_page_next',
+        product_modal_cancel: '#product_modal_cancel',
+        product_modal_confirm: '#product_modal_confirm',
+        product_rating_filter: '#product_rating_filter',
+      });
+      page.initialize();
+    });
+
+- content_for :body do
+  = render partial: 'modal'
+  = render partial: 'main/navbar/index'
+
+  .container
+    .row
+      .col-lg-9
+        = bootstrap_flash
+        %table#products_table{class: 'table table-striped'}
+          %thead
+            %tr
+              %th
+              %th
+              %th= I18n.t('products.header.product')
+              %th= I18n.t('products.header.price')
+              %th= I18n.t('products.header.rating')
+          %tbody
+          %tfoot
+            %tr
+              %td{colspan: 5}
+                %nav
+                  %ul.pagination
+                    %li
+                      %a#product_page_prev
+                        %span &laquo;
+                    %li
+                      %span#product_records_info
+                    %li
+                      %a#product_page_next
+                        %span &raquo;
+      .col-lg-3
+        = render partial: 'main/sidebar/index'
+
+
+

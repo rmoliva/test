@@ -1,0 +1,15 @@
+es:
+  application_title: 'Gestión de Productos'
+  close: 'Cerrar'
+  save: 'Guardar'
+  user_sessions:
+    close_session: 'Cerrar sesión'
+    login: 'Log in'
+    close_session_confirm: 'Está seguro de que quiere salir de la aplicación?'
+    invalid_credentials: 'Credenciales suministradas incorrectas'
+    password:
+      label: 'Contraseña'
+      placeholder: 'Introduzca su contraseña'
+    email:
+      label: 'Email'
+      placeholder: 'Introduzca su email'

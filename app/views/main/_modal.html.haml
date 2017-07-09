@@ -1,0 +1,23 @@
+#product_modal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h5.modal-title= I18n.t('products.add_product')
+      .modal-body
+        %form.form-horizontal
+          .form-group
+            %label.col-sm-2.control-label= I18n.t('products.name.label')
+            .col-sm-10
+              %input#product_name.form-control{type: "text", placeholder: I18n.t('products.name.placeholder')}
+          .form-group
+            %label.col-sm-2.control-label= I18n.t('products.price.label')
+            .col-sm-10
+              %input#product_price.form-control{type: "number", placeholder: I18n.t('products.price.placeholder')}
+          .form-group
+            %label.col-sm-2.control-label= I18n.t('products.rating.label')
+            .col-sm-10
+              %input#product_rating.form-control{type: "number", placeholder: I18n.t('products.rating.placeholder')}
+
+      .modal-footer
+        %button.btn.btn-secondary#product_modal_cancel{type: "button"}= I18n.t('close')
+        %button.btn.btn-primary#product_modal_confirm{type: "button"}= I18n.t('save')

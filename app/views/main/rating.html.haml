@@ -1,0 +1,41 @@
+- content_for :js_links do
+  = javascript_include_tag('application')
+  :javascript
+    $(document).ready(function() {
+      var page = RatingPage({
+        rating_items_el: '.rating_item',
+      });
+      page.initialize();
+    });
+
+- content_for :body do
+  = render partial: 'main/navbar/rating'
+
+  .container
+    .row
+      .col-lg-9
+        = bootstrap_flash
+        %table#products_table{class: 'table table-striped'}
+          %thead
+            %tr
+              %th= I18n.t('products.header.product')
+              %th= I18n.t('products.header.price')
+              %th= I18n.t('products.header.rating')
+          %tbody
+            - @products.each do |product|
+              %tr
+                %td= product.name
+                %td= product.price
+                %td
+                  .dropdown{data: {id: product.id}}
+                    %button.btn.btn-default.dropdown-toggle{type: "button", 'data-toggle': "dropdown"}
+                      %span.rating_value= product.rating
+                      %span.caret
+                    %ul.dropdown-menu
+                      - 6.times do |v|
+                        %li
+                          %a.rating_item{data: {rating: v, id: product.id}}= v
+      .col-lg-3
+        = render partial: 'main/sidebar/rating'
+
+

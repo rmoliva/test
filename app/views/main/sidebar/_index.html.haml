@@ -1,0 +1,20 @@
+.well.sidebar-nav
+  %h3 Sidebar
+  %ul.nav.nav-list
+    %li{class: "nav-header"}
+      = link_to_rating
+      %a#add_product_btn
+        = glyph(:add)
+        = I18n.t('products.add_product')
+
+      .dropdown#product_rating_filter
+        %button.btn.btn-default.dropdown-toggle{type: "button", 'data-toggle': "dropdown"}
+          = I18n.t('products.filter_by_rating')
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            %a.filter_item= I18n.t('products.all_ratings')
+          - 6.times do |v|
+            %li
+              %a.filter_item{data: {rating: v}}= v
+

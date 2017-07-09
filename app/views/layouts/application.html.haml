@@ -1,0 +1,26 @@
+-# coding: utf-8
+!!! XML
+!!! Strict
+%html{lang: I18n.locale}
+  %head
+    %meta{charset: "utf-8"}
+    %meta{'http-equiv': "X-UA-Compatible", content: "IE=Edge,chrome=1"}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    %title= application_title
+    = csrf_meta_tags
+
+    - # Load Bluebird
+    = javascript_include_tag('https://cdn.jsdelivr.net/bluebird/latest/bluebird.min.js')
+    - # Load Ramda
+    = javascript_include_tag('https://cdnjs.cloudflare.com/ajax/libs/ramda/0.24.1/ramda.min.js')
+
+    = stylesheet_link_tag('application')
+    = javascript_tag("var locale='#{locale}';")
+    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+
+    = yield :js_links
+
+  %body
+    = yield :body
+    %footer
+      %p &copy; Company 2017

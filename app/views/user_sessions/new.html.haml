@@ -1,0 +1,20 @@
+- content_for :body do
+	.container
+		.row
+			.span12
+				%form.form-horizontal{action: user_sessions_path, method: "POST"}
+					%fieldset
+						.legend
+							%legend Login
+							= bootstrap_flash
+						.control-group
+							%label.control-label{for: "username"}= I18n.t('user_sessions.email.label')
+							.controls
+								%input.input-xlarge{type: "text", name: "user_session[email]", placeholder: I18n.t('user_sessions.email.placeholder')}
+						.control-group
+							%label.control-label{for: "password"}= I18n.t('user_sessions.password.label')
+							.controls
+								%input.input-xlarge{type: "password", name: "user_session[password]", placeholder: I18n.t('user_sessions.password.placeholder')}
+						.control-group
+							.controls
+								%button.btn.btn-success Login
