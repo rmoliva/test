@@ -11,12 +11,12 @@ Run the following commands on the console in order to prepare the application
 ```
 bundle
 rake db:create
-rake de:migrate
+rake db:migrate
 rake db:seed
 rails s
 ```
 
-Then load the application on a browser with the url: ```http://localhost:30000```
+Then load the application on a browser with the url: ```http://localhost:3000```
 
 You can login with a test user with credentials:
 - email: test@test.com
